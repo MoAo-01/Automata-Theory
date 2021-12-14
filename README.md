@@ -5,7 +5,7 @@ This is author's personal notes for the course Automata Theory.
 
 
 ## Tools
-The notes are writed by markdown editor: **Typora**. Therefore, if you find that there are some display error, please try to open with markdown eiditor software or download plug-in. Or, sometimes you can only view the raw codes, but not the pictures.
+The notes (**.md** document) are writed by markdown editor: **Typora**. Therefore, if you find that there are some display error, please try to open with markdown eiditor software or download plug-in. Or, sometimes you can only view the raw codes, but not the pictures.
 
 ## Access Method (open .html document)
 Open the related **.html** document, and before the related url add a string: **htmlpreview.github.io/?**.
