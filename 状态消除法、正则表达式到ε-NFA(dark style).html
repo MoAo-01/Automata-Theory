@@ -1,0 +1,1469 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.native-window #md-notification {
+    border: 1px solid #70717d;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+
+</style><title>状态消除法、正则表达式到ε-NFA</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h4 id='由dfa到正则表达式状态消除法'><span>由DFA到正则表达式，状态消除法</span></h4><ul><li><span>从DFA中逐个删除状态</span></li><li><span>用标记了正则表达式的新路径替换被删掉的路径</span></li><li><span>保持&quot;自动机&quot;等价</span></li></ul><p>&nbsp;</p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="291" style="max-width: 230.64453125px;" viewBox="0 0 131.796875 291"><style>#mermaidChart0{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#e8e8e8;}#mermaidChart0 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#9370DB;}#mermaidChart0 .marker.cross{stroke:#9370DB;}#mermaidChart0 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart0 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart0 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart0 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart0 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart0 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart0 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart0 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart0 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart0 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart0 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart0 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart0 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart0 .edgeLabel .label text{fill:#171717;}#mermaidChart0 .label div .edgeLabel{color:#171717;}#mermaidChart0 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart0 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart0 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart0 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart0 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart0 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart0 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart0 .cluster-label,#mermaidChart0 .nodeLabel{color:#333;}#mermaidChart0 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart0 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart0 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart0 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart0 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart0 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart0 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart0 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart0 .note-edge{stroke-dasharray:5;}#mermaidChart0 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart0 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart0 .statediagram-note text{fill:#333;}#mermaidChart0 .statediagram-note .nodeLabel{color:#333;}#mermaidChart0 #dependencyStart,#mermaidChart0 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart0:root{--mermaid-font-family:sans-serif;}#mermaidChart0:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart0 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M24.484375,49L24.484375,55.333333333333336C24.484375,61.666666666666664,24.484375,74.33333333333333,24.484375,87C24.484375,99.66666666666667,24.484375,112.33333333333333,24.484375,118.66666666666667L24.484375,125" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M24.484375,166L24.484375,172.33333333333334C24.484375,178.66666666666666,24.484375,191.33333333333334,24.484375,204C24.484375,216.66666666666666,24.484375,229.33333333333334,24.484375,235.66666666666666L24.484375,242" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M107.3125,49L107.3125,55.333333333333336C107.3125,61.666666666666664,107.3125,74.33333333333333,107.3125,87C107.3125,99.66666666666667,107.3125,112.33333333333333,107.3125,118.66666666666667L107.3125,125" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(24.484375, 87)"><g class="label" transform="translate(-4.203125, -13)"><rect rx="0" ry="0" width="8.40625" height="26"></rect><foreignObject width="8.40625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>a</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(24.484375, 204)"><g class="label" transform="translate(-4.4609375, -13)"><rect rx="0" ry="0" width="8.921875" height="26"></rect><foreignObject width="8.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>b</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(107.3125, 87)"><g class="label" transform="translate(-8.6640625, -13)"><rect rx="0" ry="0" width="17.328125" height="26"></rect><foreignObject width="17.328125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ab</span></div></foreignObject></g></g></g><g class="nodes"><g class="node statediagram-state" id="state-A1-0" transform="translate(24.484375, 28.5)"><rect class="basic label-container" style="" x="-16.4140625" y="-20.5" width="32.828125" height="41"></rect><g class="label" style="" transform="translate(-8.9140625, -13)"><foreignObject width="17.828125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>A1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-B1-1" transform="translate(24.484375, 145.5)"><rect class="basic label-container" style="" x="-16.2265625" y="-20.5" width="32.453125" height="41"></rect><g class="label" style="" transform="translate(-8.7265625, -13)"><foreignObject width="17.453125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>B1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-C1-1" transform="translate(24.484375, 262.5)"><rect class="basic label-container" style="" x="-16.484375" y="-20.5" width="32.96875" height="41"></rect><g class="label" style="" transform="translate(-8.984375, -13)"><foreignObject width="17.96875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>C1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-A2-2" transform="translate(107.3125, 28.5)"><rect class="basic label-container" style="" x="-16.4140625" y="-20.5" width="32.828125" height="41"></rect><g class="label" style="" transform="translate(-8.9140625, -13)"><foreignObject width="17.828125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>A2</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-C2-2" transform="translate(107.3125, 145.5)"><rect class="basic label-container" style="" x="-16.484375" y="-20.5" width="32.96875" height="41"></rect><g class="label" style="" transform="translate(-8.984375, -13)"><foreignObject width="17.96875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>C2</span></div></foreignObject></g></g></g></g></g></svg></div><p>&nbsp;</p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart1" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="174" style="max-width: 233.884765625px;" viewBox="0 0 133.6484375 174"><style>#mermaidChart1{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart1 .error-icon{fill:#e8e8e8;}#mermaidChart1 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart1 .edge-thickness-normal{stroke-width:2px;}#mermaidChart1 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart1 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart1 .marker{fill:#9370DB;}#mermaidChart1 .marker.cross{stroke:#9370DB;}#mermaidChart1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart1 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart1 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart1 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart1 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart1 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart1 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart1 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart1 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart1 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart1 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart1 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart1 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart1 .edgeLabel .label text{fill:#171717;}#mermaidChart1 .label div .edgeLabel{color:#171717;}#mermaidChart1 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart1 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart1 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart1 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart1 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart1 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart1 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart1 .cluster-label,#mermaidChart1 .nodeLabel{color:#333;}#mermaidChart1 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart1 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart1 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart1 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart1 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart1 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart1 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart1 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart1 .note-edge{stroke-dasharray:5;}#mermaidChart1 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart1 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart1 .statediagram-note text{fill:#333;}#mermaidChart1 .statediagram-note .nodeLabel{color:#333;}#mermaidChart1 #dependencyStart,#mermaidChart1 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart1:root{--mermaid-font-family:sans-serif;}#mermaidChart1:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart1 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M21.42908653846154,49L19.891426282051285,55.333333333333336C18.353766025641026,61.666666666666664,15.278445512820513,74.33333333333333,15.278445512820516,87C15.278445512820513,99.66666666666667,18.353766025641026,112.33333333333333,19.891426282051285,118.66666666666667L21.42908653846154,125" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M34.42501335470085,49L36.90235487891738,55.333333333333336C39.3796964031339,61.666666666666664,44.33437945156695,74.33333333333333,44.33437945156695,87C44.33437945156695,99.66666666666667,39.3796964031339,112.33333333333333,36.90235487891738,118.66666666666667L34.42501335470085,125" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M109.234375,49L109.234375,55.333333333333336C109.234375,61.666666666666664,109.234375,74.33333333333333,109.234375,87C109.234375,99.66666666666667,109.234375,112.33333333333333,109.234375,118.66666666666667L109.234375,125" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(12.203125, 87)"><g class="label" transform="translate(-4.203125, -13)"><rect rx="0" ry="0" width="8.40625" height="26"></rect><foreignObject width="8.40625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>a</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(49.2890625, 87)"><g class="label" transform="translate(-4.203125, -13)"><rect rx="0" ry="0" width="8.40625" height="26"></rect><foreignObject width="8.40625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>a</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(109.234375, 87)"><g class="label" transform="translate(-12.859375, -13)"><rect rx="0" ry="0" width="25.71875" height="26"></rect><foreignObject width="25.71875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>a+b</span></div></foreignObject></g></g></g><g class="nodes"><g class="node statediagram-state" id="state-A1-1" transform="translate(26.40625, 28.5)"><rect class="basic label-container" style="" x="-16.4140625" y="-20.5" width="32.828125" height="41"></rect><g class="label" style="" transform="translate(-8.9140625, -13)"><foreignObject width="17.828125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>A1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-B1-1" transform="translate(26.40625, 145.5)"><rect class="basic label-container" style="" x="-16.2265625" y="-20.5" width="32.453125" height="41"></rect><g class="label" style="" transform="translate(-8.7265625, -13)"><foreignObject width="17.453125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>B1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-A2-2" transform="translate(109.234375, 28.5)"><rect class="basic label-container" style="" x="-16.4140625" y="-20.5" width="32.828125" height="41"></rect><g class="label" style="" transform="translate(-8.9140625, -13)"><foreignObject width="17.828125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>A2</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-B2-2" transform="translate(109.234375, 145.5)"><rect class="basic label-container" style="" x="-16.2265625" y="-20.5" width="32.453125" height="41"></rect><g class="label" style="" transform="translate(-8.7265625, -13)"><foreignObject width="17.453125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>B2</span></div></foreignObject></g></g></g></g></g></svg></div><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart2" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="291" style="max-width: 279.302734375px;" viewBox="0 0 159.6015625 291"><style>#mermaidChart2{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart2 .error-icon{fill:#e8e8e8;}#mermaidChart2 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart2 .edge-thickness-normal{stroke-width:2px;}#mermaidChart2 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart2 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart2 .marker{fill:#9370DB;}#mermaidChart2 .marker.cross{stroke:#9370DB;}#mermaidChart2 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart2 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart2 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart2 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart2 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart2 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart2 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart2 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart2 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart2 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart2 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart2 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart2 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart2 .edgeLabel .label text{fill:#171717;}#mermaidChart2 .label div .edgeLabel{color:#171717;}#mermaidChart2 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart2 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart2 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart2 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart2 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart2 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart2 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart2 .cluster-label,#mermaidChart2 .nodeLabel{color:#333;}#mermaidChart2 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart2 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart2 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart2 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart2 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart2 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart2 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart2 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart2 .note-edge{stroke-dasharray:5;}#mermaidChart2 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart2 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart2 .statediagram-note text{fill:#333;}#mermaidChart2 .statediagram-note .nodeLabel{color:#333;}#mermaidChart2 #dependencyStart,#mermaidChart2 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart2:root{--mermaid-font-family:sans-serif;}#mermaidChart2:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart2 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M24.484375,49L24.484375,55.333333333333336C24.484375,61.666666666666664,24.484375,74.33333333333333,24.484375,87C24.484375,99.66666666666667,24.484375,112.33333333333333,24.484375,118.66666666666667L24.484375,125" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M40.7109375,137.61752545510646L45.03993055555555,135.51460454592205C49.36892361111111,133.41168363673765,58.02690972222222,129.20584181836884,63.438151041666664,127.10292090918442C68.8493923611111,125,71.01388888888887,125,73.17838541666666,128.41666666666666C75.34288194444444,131.83333333333334,77.50737847222221,138.66666666666666,77.50737847222221,145.5C77.50737847222221,152.33333333333334,75.34288194444444,159.16666666666666,73.17838541666666,162.58333333333334C71.01388888888887,166,68.8493923611111,166,63.438151041666664,163.8970790908156C58.02690972222222,161.79415818163116,49.36892361111111,157.58831636326235,45.03993055555555,155.48539545407795L40.7109375,153.38247454489354" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M24.484375,166L24.484375,172.33333333333334C24.484375,178.66666666666666,24.484375,191.33333333333334,24.484375,204C24.484375,216.66666666666666,24.484375,229.33333333333334,24.484375,235.66666666666666L24.484375,242" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M135.1171875,49L135.1171875,55.333333333333336C135.1171875,61.666666666666664,135.1171875,74.33333333333333,135.1171875,87C135.1171875,99.66666666666667,135.1171875,112.33333333333333,135.1171875,118.66666666666667L135.1171875,125" id="edge3" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(24.484375, 87)"><g class="label" transform="translate(-4.203125, -13)"><rect rx="0" ry="0" width="8.40625" height="26"></rect><foreignObject width="8.40625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>a</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(79.671875, 145.5)"><g class="label" transform="translate(-3.9609375, -13)"><rect rx="0" ry="0" width="7.921875" height="26"></rect><foreignObject width="7.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>c</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(24.484375, 204)"><g class="label" transform="translate(-4.4609375, -13)"><rect rx="0" ry="0" width="8.921875" height="26"></rect><foreignObject width="8.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>b</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(135.1171875, 87)"><g class="label" transform="translate(-15.5625, -13)"><rect rx="0" ry="0" width="31.125" height="26"></rect><foreignObject width="31.125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ac*b</span></div></foreignObject></g></g></g><g class="nodes"><g class="node statediagram-state" id="state-A1-0" transform="translate(24.484375, 28.5)"><rect class="basic label-container" style="" x="-16.4140625" y="-20.5" width="32.828125" height="41"></rect><g class="label" style="" transform="translate(-8.9140625, -13)"><foreignObject width="17.828125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>A1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-B1-2" transform="translate(24.484375, 145.5)"><rect class="basic label-container" style="" x="-16.2265625" y="-20.5" width="32.453125" height="41"></rect><g class="label" style="" transform="translate(-8.7265625, -13)"><foreignObject width="17.453125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>B1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-C1-2" transform="translate(24.484375, 262.5)"><rect class="basic label-container" style="" x="-16.484375" y="-20.5" width="32.96875" height="41"></rect><g class="label" style="" transform="translate(-8.984375, -13)"><foreignObject width="17.96875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>C1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-A2-3" transform="translate(135.1171875, 28.5)"><rect class="basic label-container" style="" x="-16.4140625" y="-20.5" width="32.828125" height="41"></rect><g class="label" style="" transform="translate(-8.9140625, -13)"><foreignObject width="17.828125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>A2</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-C2-3" transform="translate(135.1171875, 145.5)"><rect class="basic label-container" style="" x="-16.484375" y="-20.5" width="32.96875" height="41"></rect><g class="label" style="" transform="translate(-8.984375, -13)"><foreignObject width="17.96875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>C2</span></div></foreignObject></g></g></g></g></g></svg></div><p>&nbsp;</p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart3" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="291" style="max-width: 616.041015625px;" viewBox="0 0 352.0234375 291"><style>#mermaidChart3{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart3 .error-icon{fill:#e8e8e8;}#mermaidChart3 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart3 .edge-thickness-normal{stroke-width:2px;}#mermaidChart3 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart3 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart3 .marker{fill:#9370DB;}#mermaidChart3 .marker.cross{stroke:#9370DB;}#mermaidChart3 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart3 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart3 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart3 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart3 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart3 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart3 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart3 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart3 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart3 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart3 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart3 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart3 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart3 .edgeLabel .label text{fill:#171717;}#mermaidChart3 .label div .edgeLabel{color:#171717;}#mermaidChart3 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart3 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart3 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart3 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart3 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart3 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart3 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart3 .cluster-label,#mermaidChart3 .nodeLabel{color:#333;}#mermaidChart3 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart3 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart3 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart3 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart3 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart3 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart3 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart3 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart3 .note-edge{stroke-dasharray:5;}#mermaidChart3 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart3 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart3 .statediagram-note text{fill:#333;}#mermaidChart3 .statediagram-note .nodeLabel{color:#333;}#mermaidChart3 #dependencyStart,#mermaidChart3 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart3:root{--mermaid-font-family:sans-serif;}#mermaidChart3:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart3 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M21.375,49L21.375,55.333333333333336C21.375,61.666666666666664,21.375,74.33333333333333,25.659505208333332,87.4301061101156C29.944010416666668,100.52687888689786,38.513020833333336,114.05375777379572,42.797526041666664,120.81719721724465L47.08203125,127.58063666069359" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M95.4921875,49L95.4921875,55.333333333333336C95.4921875,61.666666666666664,95.4921875,74.33333333333333,91.20768229166667,87.4301061101156C86.92317708333333,100.52687888689786,78.35416666666667,114.05375777379572,74.06966145833333,120.81719721724465L69.78515625,127.58063666069359" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M69.78515625,141.0823858018588L76.67274305555556,138.40198816821567C83.56032986111111,135.72159053457253,97.33550347222223,130.36079526728625,105.94498697916667,127.68039763364312C114.55447048611113,125,117.99826388888887,125,121.44205729166667,128.41666666666666C124.88585069444444,131.83333333333334,128.3296440972222,138.66666666666666,128.3296440972222,145.5C128.3296440972222,152.33333333333334,124.88585069444444,159.16666666666666,121.44205729166667,162.58333333333334C117.99826388888887,166,114.55447048611113,166,105.94498697916667,163.31960236635686C97.33550347222223,160.63920473271375,83.56032986111111,155.27840946542747,76.67274305555556,152.59801183178433L69.78515625,149.9176141981412" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M47.08203125,163.1955345060893L42.719401041666664,169.99627875507443C38.356770833333336,176.79702300405953,29.631510416666668,190.39851150202978,25.268880208333332,203.5325890843482C20.90625,216.66666666666666,20.90625,229.33333333333334,20.90625,235.66666666666666L20.90625,242" id="edge3" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M69.78515625,163.1955345060893L74.14778645833333,169.99627875507443C78.51041666666667,176.79702300405953,87.23567708333333,190.39851150202978,91.59830729166667,203.5325890843482C95.9609375,216.66666666666666,95.9609375,229.33333333333334,95.9609375,235.66666666666666L95.9609375,242" id="edge4" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M194.734375,42.411960715538406L187.66080729166666,49.843300596282006C180.58723958333334,57.274640477025606,166.44010416666666,72.1373202385128,162.8211972489316,85.90199345258974C159.20229033119656,99.66666666666667,166.11161191239316,112.33333333333333,169.56627270299145,118.66666666666667L173.02093349358975,125" id="edge5" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M221.21875,40.97185711590466L229.36393229166666,48.64321426325389C237.50911458333334,56.314571410603115,253.79947916666666,71.65728570530156,266.09765625,85.6653978195382C278.3958333333333,99.67350993377484,286.7018229166667,112.34701986754966,290.8548177083333,118.68377483443709L295.0078125,125.0205298013245" id="edge6" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M271.21875,41.15580781082951L263.1061197916667,48.796506509024596C254.99348958333334,56.43720520721968,238.76822916666666,71.71860260360984,226.5048466435185,85.69263463513825C214.24146412037035,99.66666666666667,205.93995949074073,112.33333333333333,201.78920717592595,118.66666666666667L197.63845486111111,125" id="edge7" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M298.09375,45.258827448367754L303.671875,52.215689540306464C309.25,59.17255163224517,320.40625,73.08627581612258,323.47996794871796,86.37647124139464C326.55368589743586,99.66666666666667,321.54487179487177,112.33333333333333,319.0404647435897,118.66666666666667L316.5360576923077,125" id="edge8" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(21.375, 87)"><g class="label" transform="translate(-4.4609375, -13)"><rect rx="0" ry="0" width="8.921875" height="26"></rect><foreignObject width="8.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>p</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(95.4921875, 87)"><g class="label" transform="translate(-3.109375, -13)"><rect rx="0" ry="0" width="6.21875" height="26"></rect><foreignObject width="6.21875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>r</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(131.7734375, 145.5)"><g class="label" transform="translate(-3.2421875, -13)"><rect rx="0" ry="0" width="6.484375" height="26"></rect><foreignObject width="6.484375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>s</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(20.90625, 204)"><g class="label" transform="translate(-4.4609375, -13)"><rect rx="0" ry="0" width="8.921875" height="26"></rect><foreignObject width="8.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(95.9609375, 204)"><g class="label" transform="translate(-3.171875, -13)"><rect rx="0" ry="0" width="6.34375" height="26"></rect><foreignObject width="6.34375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>t</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(152.29296875, 87)"><g class="label" transform="translate(-15.09375, -13)"><rect rx="0" ry="0" width="30.1875" height="26"></rect><foreignObject width="30.1875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ps*q</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(270.08984375, 87)"><g class="label" transform="translate(-13.8046875, -13)"><rect rx="0" ry="0" width="27.609375" height="26"></rect><foreignObject width="27.609375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ps*t</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(222.54296875, 87)"><g class="label" transform="translate(-13.7421875, -13)"><rect rx="0" ry="0" width="27.484375" height="26"></rect><foreignObject width="27.484375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>rs*q</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(331.5625, 87)"><g class="label" transform="translate(-12.4609375, -13)"><rect rx="0" ry="0" width="24.921875" height="26"></rect><foreignObject width="24.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>rs*t</span></div></foreignObject></g></g></g><g class="nodes"><g class="node statediagram-state" id="state-P-0" transform="translate(21.375, 28.5)"><rect class="basic label-container" style="" x="-11.9609375" y="-20.5" width="23.921875" height="41"></rect><g class="label" style="" transform="translate(-4.4609375, -13)"><foreignObject width="8.921875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>P</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-S-4" transform="translate(58.43359375, 145.5)"><rect class="basic label-container" style="" x="-11.3515625" y="-20.5" width="22.703125" height="41"></rect><g class="label" style="" transform="translate(-3.8515625, -13)"><foreignObject width="7.703125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>S</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-R-1" transform="translate(95.4921875, 28.5)"><rect class="basic label-container" style="" x="-12.15625" y="-20.5" width="24.3125" height="41"></rect><g class="label" style="" transform="translate(-4.65625, -13)"><foreignObject width="9.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>R</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-Q-3" transform="translate(20.90625, 262.5)"><rect class="basic label-container" style="" x="-12.90625" y="-20.5" width="25.8125" height="41"></rect><g class="label" style="" transform="translate(-5.40625, -13)"><foreignObject width="10.8125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>Q</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-T-4" transform="translate(95.9609375, 262.5)"><rect class="basic label-container" style="" x="-12.1484375" y="-20.5" width="24.296875" height="41"></rect><g class="label" style="" transform="translate(-4.6484375, -13)"><foreignObject width="9.296875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>T</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-P'-6" transform="translate(207.9765625, 28.5)"><rect class="basic label-container" style="" x="-13.2421875" y="-20.5" width="26.484375" height="41"></rect><g class="label" style="" transform="translate(-5.7421875, -13)"><foreignObject width="11.484375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>P'</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-Q'-7" transform="translate(184.203125, 145.5)"><rect class="basic label-container" style="" x="-14.1875" y="-20.5" width="28.375" height="41"></rect><g class="label" style="" transform="translate(-6.6875, -13)"><foreignObject width="13.375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>Q'</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-T'-8" transform="translate(308.4296875, 145.5)"><rect class="basic label-container" style="" x="-13.421875" y="-20.5" width="26.84375" height="41"></rect><g class="label" style="" transform="translate(-5.921875, -13)"><foreignObject width="11.84375" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>T'</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-R'-8" transform="translate(284.65625, 28.5)"><rect class="basic label-container" style="" x="-13.4375" y="-20.5" width="26.875" height="41"></rect><g class="label" style="" transform="translate(-5.9375, -13)"><foreignObject width="11.875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>R'</span></div></foreignObject></g></g></g></g></g></svg></div><p><span>利用状态消除法，构造下图自动机的正则表达式.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart4" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="419" style="max-width: 237.6650390625px;" viewBox="0 0 135.80859375 419"><style>#mermaidChart4{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart4 .error-icon{fill:#e8e8e8;}#mermaidChart4 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart4 .edge-thickness-normal{stroke-width:2px;}#mermaidChart4 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart4 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart4 .marker{fill:#9370DB;}#mermaidChart4 .marker.cross{stroke:#9370DB;}#mermaidChart4 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart4 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart4 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart4 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart4 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart4 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart4 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart4 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart4 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart4 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart4 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart4 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart4 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart4 .edgeLabel .label text{fill:#171717;}#mermaidChart4 .label div .edgeLabel{color:#171717;}#mermaidChart4 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart4 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart4 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart4 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart4 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart4 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart4 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart4 .cluster-label,#mermaidChart4 .nodeLabel{color:#333;}#mermaidChart4 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart4 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart4 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart4 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart4 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart4 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart4 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart4 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart4 .note-edge{stroke-dasharray:5;}#mermaidChart4 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart4 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart4 .statediagram-note text{fill:#333;}#mermaidChart4 .statediagram-note .nodeLabel{color:#333;}#mermaidChart4 #dependencyStart,#mermaidChart4 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart4:root{--mermaid-font-family:sans-serif;}#mermaidChart4:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart4 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M68.26171875,22L68.26171875,26.166666666666668C68.26171875,30.333333333333332,68.26171875,38.666666666666664,68.26171875,47C68.26171875,55.333333333333336,68.26171875,63.666666666666664,68.26171875,67.83333333333333L68.26171875,72" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M84.41796875,84.66763148170956L88.77300347222223,82.55635956809131C93.12803819444444,80.44508765447304,101.83810763888887,76.22254382723652,107.28190104166664,74.11127191361827C112.72569444444444,72,114.90321180555554,72,117.08072916666667,75.41666666666667C119.25824652777777,78.83333333333333,121.43576388888887,85.66666666666667,121.43576388888887,92.5C121.43576388888887,99.33333333333333,119.25824652777777,106.16666666666667,117.08072916666667,109.58333333333333C114.90321180555554,113,112.72569444444444,113,107.28190104166667,110.88872808638173C101.83810763888887,108.77745617276348,93.12803819444444,104.55491234552694,88.77300347222221,102.44364043190869L84.41796875,100.33236851829044" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M53.58894230769231,113L49.05588942307693,119.33333333333333C44.52283653846154,125.66666666666667,35.45673076923077,138.33333333333334,30.923677884615387,151C26.390625,163.66666666666666,26.390625,176.33333333333334,26.390625,182.66666666666666L26.390625,189" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M21.416199252136753,230L19.879384793447294,236.33333333333334C18.342570334757834,242.66666666666666,15.268941417378917,255.33333333333334,20.38381966702279,268.60707982071114C25.498697916666668,281.8808263080889,38.802083333333336,295.7616526161778,45.453776041666664,302.70206577022225L52.10546875,309.6424789242667" id="edge3" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M64.02236912393163,306L62.71265135327636,299.6666666666667C61.40293358262108,293.3333333333333,58.783498041310544,280.6666666666667,54.25044515669516,268C49.71739227207977,255.33333333333334,43.27072204415955,242.66666666666666,40.04738693019943,236.33333333333334L36.82405181623932,230" id="edge4" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M82.9344951923077,306L87.46754807692308,299.6666666666667C92.00060096153845,293.3333333333333,101.06670673076923,280.6666666666667,105.59975961538463,264.5833333333333C110.1328125,248.5,110.1328125,229,110.1328125,209.5C110.1328125,190,110.1328125,170.5,105.59975961538463,154.41666666666666C101.06670673076923,138.33333333333334,92.00060096153845,125.66666666666667,87.46754807692308,119.33333333333333L82.9344951923077,113" id="edge5" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M42.546875,201.66763148170958L46.90190972222222,199.55635956809132C51.256944444444436,197.44508765447304,59.967013888888886,193.22254382723654,65.41080729166667,191.11127191361825C70.85460069444444,189,73.03211805555554,189,75.20963541666666,192.41666666666666C77.38715277777777,195.83333333333334,79.56467013888889,202.66666666666666,79.56467013888887,209.5C79.56467013888889,216.33333333333334,77.38715277777777,223.16666666666666,75.20963541666666,226.58333333333334C73.03211805555554,230,70.85460069444444,230,65.41080729166667,227.88872808638175C59.967013888888886,225.77745617276346,51.256944444444436,221.55491234552696,46.90190972222222,219.44364043190868L42.546875,217.33236851829042" id="edge6" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M68.26171875,347L68.26171875,351.1666666666667C68.26171875,355.3333333333333,68.26171875,363.6666666666667,68.26171875,372C68.26171875,380.3333333333333,68.26171875,388.6666666666667,68.26171875,392.8333333333333L68.26171875,397" id="edge7" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(123.61328125, 92.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(26.390625, 151)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(12.1953125, 268)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(56.1640625, 268)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(110.1328125, 209.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(81.7421875, 209.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="state-root_start-0" transform="translate(68.26171875, 15)"><circle class="state-start" r="7" width="14" height="14"></circle></g><g class="node statediagram-state" id="state-q0-5" transform="translate(68.26171875, 92.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q0</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q1-6" transform="translate(26.390625, 209.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q2-7" transform="translate(68.26171875, 326.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q2</span></div></foreignObject></g></g><g class="node default" id="state-root_end-7" transform="translate(68.26171875, 404)"><circle class="state-start" r="7" width="14" height="14"></circle><circle class="state-end" r="5" width="10" height="10"></circle></g></g></g></g></svg></div><p>&nbsp;</p><p><span>添加起始和结束的空转移：</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart5" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="471" style="max-width: 237.6650390625px;" viewBox="0 0 135.80859375 471"><style>#mermaidChart5{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart5 .error-icon{fill:#e8e8e8;}#mermaidChart5 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart5 .edge-thickness-normal{stroke-width:2px;}#mermaidChart5 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart5 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart5 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart5 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart5 .marker{fill:#9370DB;}#mermaidChart5 .marker.cross{stroke:#9370DB;}#mermaidChart5 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart5 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart5 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart5 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart5 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart5 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart5 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart5 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart5 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart5 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart5 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart5 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart5 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart5 .edgeLabel .label text{fill:#171717;}#mermaidChart5 .label div .edgeLabel{color:#171717;}#mermaidChart5 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart5 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart5 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart5 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart5 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart5 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart5 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart5 .cluster-label,#mermaidChart5 .nodeLabel{color:#333;}#mermaidChart5 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart5 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart5 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart5 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart5 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart5 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart5 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart5 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart5 .note-edge{stroke-dasharray:5;}#mermaidChart5 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart5 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart5 .statediagram-note text{fill:#333;}#mermaidChart5 .statediagram-note .nodeLabel{color:#333;}#mermaidChart5 #dependencyStart,#mermaidChart5 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart5:root{--mermaid-font-family:sans-serif;}#mermaidChart5:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart5 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M68.26171875,22L68.26171875,28.333333333333332C68.26171875,34.666666666666664,68.26171875,47.333333333333336,68.26171875,60C68.26171875,72.66666666666667,68.26171875,85.33333333333333,68.26171875,91.66666666666667L68.26171875,98" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M84.41796875,110.66763148170956L88.77300347222223,108.5563595680913C93.12803819444444,106.44508765447306,101.83810763888887,102.22254382723652,107.28190104166664,100.11127191361827C112.72569444444444,98,114.90321180555554,98,117.08072916666667,101.41666666666667C119.25824652777777,104.83333333333333,121.43576388888887,111.66666666666667,121.43576388888887,118.5C121.43576388888887,125.33333333333333,119.25824652777777,132.16666666666666,117.08072916666667,135.58333333333334C114.90321180555554,139,112.72569444444444,139,107.28190104166667,136.88872808638175C101.83810763888887,134.77745617276346,93.12803819444444,130.55491234552696,88.77300347222221,128.44364043190868L84.41796875,126.33236851829044" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M53.58894230769231,139L49.05588942307693,145.33333333333334C44.52283653846154,151.66666666666666,35.45673076923077,164.33333333333334,30.923677884615387,177C26.390625,189.66666666666666,26.390625,202.33333333333334,26.390625,208.66666666666666L26.390625,215" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M21.416199252136753,256L19.879384793447294,262.3333333333333C18.342570334757834,268.6666666666667,15.268941417378917,281.3333333333333,20.38381966702279,294.60707982071114C25.498697916666668,307.8808263080889,38.802083333333336,321.7616526161778,45.453776041666664,328.70206577022225L52.10546875,335.6424789242667" id="edge3" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M64.02236912393163,332L62.71265135327636,325.6666666666667C61.40293358262108,319.3333333333333,58.783498041310544,306.6666666666667,54.25044515669516,294C49.71739227207977,281.3333333333333,43.27072204415955,268.6666666666667,40.04738693019943,262.3333333333333L36.82405181623932,256" id="edge4" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M82.9344951923077,332L87.46754807692308,325.6666666666667C92.00060096153845,319.3333333333333,101.06670673076923,306.6666666666667,105.59975961538463,290.5833333333333C110.1328125,274.5,110.1328125,255,110.1328125,235.5C110.1328125,216,110.1328125,196.5,105.59975961538463,180.41666666666666C101.06670673076923,164.33333333333334,92.00060096153845,151.66666666666666,87.46754807692308,145.33333333333334L82.9344951923077,139" id="edge5" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M42.546875,227.66763148170958L46.90190972222222,225.55635956809132C51.256944444444436,223.44508765447304,59.967013888888886,219.22254382723654,65.41080729166667,217.11127191361825C70.85460069444444,215,73.03211805555554,215,75.20963541666666,218.41666666666666C77.38715277777777,221.83333333333334,79.56467013888889,228.66666666666666,79.56467013888887,235.5C79.56467013888889,242.33333333333334,77.38715277777777,249.16666666666666,75.20963541666666,252.58333333333334C73.03211805555554,256,70.85460069444444,256,65.41080729166667,253.88872808638175C59.967013888888886,251.77745617276346,51.256944444444436,247.55491234552696,46.90190972222222,245.44364043190868L42.546875,243.33236851829042" id="edge6" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M68.26171875,373L68.26171875,379.3333333333333C68.26171875,385.6666666666667,68.26171875,398.3333333333333,68.26171875,411C68.26171875,423.6666666666667,68.26171875,436.3333333333333,68.26171875,442.6666666666667L68.26171875,449" id="edge7" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(68.26171875, 60)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(123.61328125, 118.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(26.390625, 177)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(12.1953125, 294)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(56.1640625, 294)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(110.1328125, 235.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(81.7421875, 235.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(68.26171875, 411)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="state-root_start-0" transform="translate(68.26171875, 15)"><circle class="state-start" r="7" width="14" height="14"></circle></g><g class="node statediagram-state" id="state-q0-5" transform="translate(68.26171875, 118.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q0</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q1-6" transform="translate(26.390625, 235.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q2-7" transform="translate(68.26171875, 352.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q2</span></div></foreignObject></g></g><g class="node default" id="state-root_end-7" transform="translate(68.26171875, 456)"><circle class="state-start" r="7" width="14" height="14"></circle><circle class="state-end" r="5" width="10" height="10"></circle></g></g></g></g></svg></div><p><span>消除状态q1，添加路径q0→q2和q2→q2：</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart6" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="354" style="max-width: 233.775390625px;" viewBox="0 0 133.5859375 354"><style>#mermaidChart6{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart6 .error-icon{fill:#e8e8e8;}#mermaidChart6 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart6 .edge-thickness-normal{stroke-width:2px;}#mermaidChart6 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart6 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart6 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart6 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart6 .marker{fill:#9370DB;}#mermaidChart6 .marker.cross{stroke:#9370DB;}#mermaidChart6 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart6 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart6 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart6 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart6 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart6 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart6 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart6 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart6 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart6 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart6 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart6 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart6 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart6 .edgeLabel .label text{fill:#171717;}#mermaidChart6 .label div .edgeLabel{color:#171717;}#mermaidChart6 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart6 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart6 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart6 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart6 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart6 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart6 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart6 .cluster-label,#mermaidChart6 .nodeLabel{color:#333;}#mermaidChart6 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart6 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart6 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart6 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart6 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart6 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart6 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart6 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart6 .note-edge{stroke-dasharray:5;}#mermaidChart6 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart6 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart6 .statediagram-note text{fill:#333;}#mermaidChart6 .statediagram-note .nodeLabel{color:#333;}#mermaidChart6 #dependencyStart,#mermaidChart6 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart6:root{--mermaid-font-family:sans-serif;}#mermaidChart6:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart6 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M43.3828125,22L43.3828125,28.333333333333332C43.3828125,34.666666666666664,43.3828125,47.333333333333336,43.3828125,60C43.3828125,72.66666666666667,43.3828125,85.33333333333333,43.3828125,91.66666666666667L43.3828125,98" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M59.5390625,110.66763148170956L63.89409722222222,108.5563595680913C68.24913194444444,106.44508765447306,76.95920138888889,102.22254382723652,82.40299479166667,100.11127191361827C87.84678819444444,98,90.02430555555554,98,92.20182291666667,101.41666666666667C94.37934027777777,104.83333333333333,96.55685763888887,111.66666666666667,96.55685763888887,118.5C96.55685763888887,125.33333333333333,94.37934027777777,132.16666666666666,92.20182291666667,135.58333333333334C90.02430555555554,139,87.84678819444444,139,82.40299479166667,136.88872808638175C76.95920138888889,134.77745617276346,68.24913194444444,130.55491234552696,63.89409722222222,128.44364043190868L59.5390625,126.33236851829044" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M36.423544337606835,139L34.27352653133903,145.33333333333334C32.123508725071225,151.66666666666666,27.823473112535613,164.33333333333334,27.823473112535613,177C27.823473112535613,189.66666666666666,32.123508725071225,202.33333333333334,34.27352653133903,208.66666666666666L36.423544337606835,215" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M59.5390625,228.85447800188106L65.15277777777777,226.5453983349009C70.76649305555556,224.2363186679207,81.9939236111111,219.61815933396034,89.01106770833333,217.30907966698018C96.02821180555554,215,98.83506944444446,215,101.64192708333333,218.41666666666666C104.44878472222223,221.83333333333334,107.25564236111113,228.66666666666666,107.25564236111113,235.5C107.25564236111113,242.33333333333334,104.44878472222223,249.16666666666666,101.64192708333333,252.58333333333334C98.83506944444446,256,96.02821180555554,256,89.01106770833333,253.69092033301982C81.9939236111111,251.38184066603966,70.76649305555556,246.7636813320793,65.15277777777777,244.45460166509915L59.5390625,242.14552199811894" id="edge3" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M50.342080662393165,215L52.49209846866097,208.66666666666666C54.642116274928775,202.33333333333334,58.942151887464384,189.66666666666666,58.9421518874644,177C58.942151887464384,164.33333333333334,54.642116274928775,151.66666666666666,52.49209846866097,145.33333333333334L50.342080662393165,139" id="edge4" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M43.3828125,256L43.3828125,262.3333333333333C43.3828125,268.6666666666667,43.3828125,281.3333333333333,43.3828125,294C43.3828125,306.6666666666667,43.3828125,319.3333333333333,43.3828125,325.6666666666667L43.3828125,332" id="edge5" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(43.3828125, 60)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(98.734375, 118.5)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(23.5234375, 177)"><g class="label" transform="translate(-15.5234375, -13)"><rect rx="0" ry="0" width="31.046875" height="26"></rect><foreignObject width="31.046875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>00*1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(110.0625, 235.5)"><g class="label" transform="translate(-15.5234375, -13)"><rect rx="0" ry="0" width="31.046875" height="26"></rect><foreignObject width="31.046875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>00*1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(63.2421875, 177)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(43.3828125, 294)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="state-root_start-0" transform="translate(43.3828125, 15)"><circle class="state-start" r="7" width="14" height="14"></circle></g><g class="node statediagram-state" id="state-q0-4" transform="translate(43.3828125, 118.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q0</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q2-5" transform="translate(43.3828125, 235.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q2</span></div></foreignObject></g></g><g class="node default" id="state-root_end-5" transform="translate(43.3828125, 339)"><circle class="state-start" r="7" width="14" height="14"></circle><circle class="state-end" r="5" width="10" height="10"></circle></g></g></g></g></svg></div><p><span>消除状态q0，添加路径s→q2和q2→q2：</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart7" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="237" style="max-width: 309.88671875px;" viewBox="0 0 177.078125 237"><style>#mermaidChart7{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart7 .error-icon{fill:#e8e8e8;}#mermaidChart7 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart7 .edge-thickness-normal{stroke-width:2px;}#mermaidChart7 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart7 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart7 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart7 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart7 .marker{fill:#9370DB;}#mermaidChart7 .marker.cross{stroke:#9370DB;}#mermaidChart7 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart7 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart7 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart7 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart7 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart7 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart7 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart7 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart7 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart7 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart7 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart7 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart7 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart7 .edgeLabel .label text{fill:#171717;}#mermaidChart7 .label div .edgeLabel{color:#171717;}#mermaidChart7 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart7 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart7 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart7 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart7 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart7 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart7 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart7 .cluster-label,#mermaidChart7 .nodeLabel{color:#333;}#mermaidChart7 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart7 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart7 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart7 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart7 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart7 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart7 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart7 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart7 .note-edge{stroke-dasharray:5;}#mermaidChart7 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart7 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart7 .statediagram-note text{fill:#333;}#mermaidChart7 .statediagram-note .nodeLabel{color:#333;}#mermaidChart7 #dependencyStart,#mermaidChart7 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart7:root{--mermaid-font-family:sans-serif;}#mermaidChart7:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart7 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M30.65625,22L30.65625,28.333333333333332C30.65625,34.666666666666664,30.65625,47.333333333333336,30.65625,60C30.65625,72.66666666666667,30.65625,85.33333333333333,30.65625,91.66666666666667L30.65625,98" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M46.8125,113.6704260651629L55.549479166666664,111.05868838763575C64.28645833333333,108.4469507101086,81.76041666666667,103.2234753550543,92.681640625,100.61173767752716C103.60286458333333,98,107.97135416666667,98,112.33984375,101.41666666666667C116.70833333333333,104.83333333333333,121.07682291666667,111.66666666666667,121.07682291666667,118.5C121.07682291666667,125.33333333333333,116.70833333333333,132.16666666666666,112.33984375,135.58333333333334C107.97135416666667,139,103.60286458333333,139,92.681640625,136.38826232247285C81.76041666666667,133.77652464494568,64.28645833333333,128.5530492898914,55.549479166666664,125.94131161236425L46.8125,123.3295739348371" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M30.65625,139L30.65625,145.33333333333334C30.65625,151.66666666666666,30.65625,164.33333333333334,30.65625,177C30.65625,189.66666666666666,30.65625,202.33333333333334,30.65625,208.66666666666666L30.65625,215" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(30.65625, 60)"><g class="label" transform="translate(-22.65625, -13)"><rect rx="0" ry="0" width="45.3125" height="26"></rect><foreignObject width="45.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1*00*1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(125.4453125, 118.5)"><g class="label" transform="translate(-43.6328125, -13)"><rect rx="0" ry="0" width="87.265625" height="26"></rect><foreignObject width="87.265625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>00*1+1100*1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(30.65625, 177)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="state-root_start-0" transform="translate(30.65625, 15)"><circle class="state-start" r="7" width="14" height="14"></circle></g><g class="node statediagram-state" id="state-q2-2" transform="translate(30.65625, 118.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q2</span></div></foreignObject></g></g><g class="node default" id="state-root_end-2" transform="translate(30.65625, 222)"><circle class="state-start" r="7" width="14" height="14"></circle><circle class="state-end" r="5" width="10" height="10"></circle></g></g></g></g></svg></div><p><span>消除状态q2，添加路径s→f：</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart8" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="120" style="max-width: 290.85546875px;" viewBox="0 0 166.203125 120"><style>#mermaidChart8{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart8 .error-icon{fill:#e8e8e8;}#mermaidChart8 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart8 .edge-thickness-normal{stroke-width:2px;}#mermaidChart8 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart8 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart8 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart8 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart8 .marker{fill:#9370DB;}#mermaidChart8 .marker.cross{stroke:#9370DB;}#mermaidChart8 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart8 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart8 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart8 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart8 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart8 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart8 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart8 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart8 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart8 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart8 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart8 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart8 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart8 .edgeLabel .label text{fill:#171717;}#mermaidChart8 .label div .edgeLabel{color:#171717;}#mermaidChart8 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart8 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart8 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart8 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart8 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart8 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart8 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart8 .cluster-label,#mermaidChart8 .nodeLabel{color:#333;}#mermaidChart8 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart8 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart8 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart8 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart8 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart8 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart8 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart8 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart8 .note-edge{stroke-dasharray:5;}#mermaidChart8 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart8 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart8 .statediagram-note text{fill:#333;}#mermaidChart8 .statediagram-note .nodeLabel{color:#333;}#mermaidChart8 #dependencyStart,#mermaidChart8 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart8:root{--mermaid-font-family:sans-serif;}#mermaidChart8:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart8 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M83.1015625,22L83.1015625,28.333333333333332C83.1015625,34.666666666666664,83.1015625,47.333333333333336,83.1015625,60C83.1015625,72.66666666666667,83.1015625,85.33333333333333,83.1015625,91.66666666666667L83.1015625,98" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(83.1015625, 60)"><g class="label" transform="translate(-75.1015625, -13)"><rect rx="0" ry="0" width="150.203125" height="26"></rect><foreignObject width="150.203125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1*00*1(00*1+1100*1)*</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="state-root_start-0" transform="translate(83.1015625, 15)"><circle class="state-start" r="7" width="14" height="14"></circle></g><g class="node default" id="state-root_end-0" transform="translate(83.1015625, 105)"><circle class="state-start" r="7" width="14" height="14"></circle><circle class="state-end" r="5" width="10" height="10"></circle></g></g></g></g></svg></div><p>&nbsp;</p><p><span>正则表达式(0+1)*1(0+1)构造ε-NFA.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart9" width="100%" xmlns="http://www.w3.org/2000/svg" class="statediagram" height="1381" style="max-width: 364.1640625px;" viewBox="0 0 208.09375 1381"><style>#mermaidChart9{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidChart9 .error-icon{fill:#e8e8e8;}#mermaidChart9 .error-text{fill:#f1908e;stroke:#f1908e;}#mermaidChart9 .edge-thickness-normal{stroke-width:2px;}#mermaidChart9 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart9 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart9 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart9 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart9 .marker{fill:#9370DB;}#mermaidChart9 .marker.cross{stroke:#9370DB;}#mermaidChart9 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart9 g.stateGroup text{fill:hsl(208,11.724137931%,72.9411764706%);stroke:none;font-size:10px;}#mermaidChart9 g.stateGroup text{fill:#333;stroke:none;font-size:10px;}#mermaidChart9 g.stateGroup .state-title{font-weight:bolder;fill:#333;}#mermaidChart9 g.stateGroup rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart9 g.stateGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart9 .transition{stroke:#9370DB;stroke-width:1;fill:none;}#mermaidChart9 .stateGroup .composit{fill:#fff;border-bottom:1px;}#mermaidChart9 .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#mermaidChart9 .state-note{stroke:hsl(52.6829268293,60%,73.9215686275%);fill:#fff5ad;}#mermaidChart9 .state-note text{fill:black;stroke:none;font-size:10px;}#mermaidChart9 .stateLabel .box{stroke:none;stroke-width:0;fill:#BDD5EA;opacity:0.5;}#mermaidChart9 .edgeLabel .label rect{fill:#e8e8e8;opacity:0.5;}#mermaidChart9 .edgeLabel .label text{fill:#171717;}#mermaidChart9 .label div .edgeLabel{color:#171717;}#mermaidChart9 .stateLabel text{fill:#333;font-size:10px;font-weight:bold;}#mermaidChart9 .node circle.state-start{fill:#9370DB;stroke:black;}#mermaidChart9 .node circle.state-end{fill:hsl(208,11.724137931%,72.9411764706%);stroke:#fff;stroke-width:1.5;}#mermaidChart9 .end-state-inner{fill:#fff;stroke-width:1.5;}#mermaidChart9 .node rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart9 #statediagram-barbEnd{fill:#9370DB;}#mermaidChart9 .statediagram-cluster rect{fill:#BDD5EA;stroke:hsl(208,11.724137931%,72.9411764706%);stroke-width:1px;}#mermaidChart9 .cluster-label,#mermaidChart9 .nodeLabel{color:#333;}#mermaidChart9 .statediagram-cluster rect.outer{rx:5px;ry:5px;}#mermaidChart9 .statediagram-state .divider{stroke:hsl(208,11.724137931%,72.9411764706%);}#mermaidChart9 .statediagram-state .title-state{rx:5px;ry:5px;}#mermaidChart9 .statediagram-cluster.statediagram-cluster .inner{fill:#fff;}#mermaidChart9 .statediagram-cluster.statediagram-cluster-alt .inner{fill:#e0e0e0;}#mermaidChart9 .statediagram-cluster .inner{rx:0;ry:0;}#mermaidChart9 .statediagram-state rect.basic{rx:5px;ry:5px;}#mermaidChart9 .statediagram-state rect.divider{stroke-dasharray:10,10;fill:#efefef;}#mermaidChart9 .note-edge{stroke-dasharray:5;}#mermaidChart9 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart9 .statediagram-note rect{fill:#fff5ad;stroke:hsl(52.6829268293,60%,73.9215686275%);stroke-width:1px;rx:0;ry:0;}#mermaidChart9 .statediagram-note text{fill:#333;}#mermaidChart9 .statediagram-note .nodeLabel{color:#333;}#mermaidChart9 #dependencyStart,#mermaidChart9 #dependencyEnd{fill:#9370DB;stroke:#9370DB;stroke-width:1;}#mermaidChart9:root{--mermaid-font-family:sans-serif;}#mermaidChart9:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart9 stateDiagram{fill:apa;}</style><g><defs><marker id="statediagram-barbEnd" refX="19" refY="7" markerWidth="20" markerHeight="14" markerUnits="strokeWidth" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M78.46875,22L78.46875,26.166666666666668C78.46875,30.333333333333332,78.46875,38.666666666666664,78.46875,47C78.46875,55.333333333333336,78.46875,63.666666666666664,78.46875,67.83333333333333L78.46875,72" id="edge0" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M94.625,106.66272535705923L103.0546875,114.05227113088269C111.484375,121.44181690470616,128.34375,136.2209084523531,136.7734375,149.94378755950987C145.203125,163.66666666666666,145.203125,176.33333333333334,145.203125,182.66666666666666L145.203125,189" id="edge1" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M62.3125,106.66272535705923L53.8828125,114.05227113088269C45.453125,121.44181690470616,28.59375,136.2209084523531,20.1640625,153.36045422617653C11.734375,170.5,11.734375,190,11.734375,209.5C11.734375,229,11.734375,248.5,11.734375,268C11.734375,287.5,11.734375,307,11.734375,326.5C11.734375,346,11.734375,365.5,11.734375,385C11.734375,404.5,11.734375,424,11.734375,443.5C11.734375,463,11.734375,482.5,11.734375,502C11.734375,521.5,11.734375,541,11.734375,560.5C11.734375,580,11.734375,599.5,20.1640625,616.6395457738234C28.59375,633.779091547647,45.453125,648.5581830952939,53.8828125,655.9477288691173L62.3125,663.3372746429408" id="edge2" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M129.046875,220.98234624145786L118.02083333333333,228.81862186788155C106.99479166666667,236.65489749430526,84.94270833333333,252.32744874715263,73.91666666666667,266.49705770690963C62.890625,280.6666666666667,62.890625,293.3333333333333,62.890625,299.6666666666667L62.890625,306" id="edge3" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M62.890625,347L62.890625,353.3333333333333C62.890625,359.6666666666667,62.890625,372.3333333333333,62.890625,385C62.890625,397.6666666666667,62.890625,410.3333333333333,62.890625,416.6666666666667L62.890625,423" id="edge4" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M62.890625,464L62.890625,470.3333333333333C62.890625,476.6666666666667,62.890625,489.3333333333333,73.91666666666667,503.50294229309037C84.94270833333333,517.6725512528474,106.99479166666667,533.3451025056947,118.02083333333333,541.1813781321184L129.046875,549.0176537585421" id="edge5" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M145.203125,230L145.203125,236.33333333333334C145.203125,242.66666666666666,145.203125,255.33333333333334,145.203125,268C145.203125,280.6666666666667,145.203125,293.3333333333333,145.203125,299.6666666666667L145.203125,306" id="edge6" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M145.203125,347L145.203125,353.3333333333333C145.203125,359.6666666666667,145.203125,372.3333333333333,145.203125,385C145.203125,397.6666666666667,145.203125,410.3333333333333,145.203125,416.6666666666667L145.203125,423" id="edge7" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M145.203125,464L145.203125,470.3333333333333C145.203125,476.6666666666667,145.203125,489.3333333333333,145.203125,502C145.203125,514.6666666666666,145.203125,527.3333333333334,145.203125,533.6666666666666L145.203125,540" id="edge8" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M161.359375,542.024434941967L167.19270833333334,535.3536957849725C173.02604166666666,528.682956627978,184.69270833333334,515.341478313989,190.52604166666666,498.92073915699456C196.359375,482.5,196.359375,463,196.359375,443.5C196.359375,424,196.359375,404.5,196.359375,385C196.359375,365.5,196.359375,346,196.359375,326.5C196.359375,307,196.359375,287.5,190.52604166666666,271.0792608430055C184.69270833333334,254.658521686011,173.02604166666666,241.317043372022,167.19270833333334,234.6463042150275L161.359375,227.975565058033" id="edge9" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M145.203125,581L145.203125,587.3333333333334C145.203125,593.6666666666666,145.203125,606.3333333333334,136.7734375,620.0562124404902C128.34375,633.779091547647,111.484375,648.5581830952939,103.0546875,655.9477288691173L94.625,663.3372746429408" id="edge10" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M78.46875,698L78.46875,704.3333333333334C78.46875,710.6666666666666,78.46875,723.3333333333334,78.46875,736C78.46875,748.6666666666666,78.46875,761.3333333333334,78.46875,767.6666666666666L78.46875,774" id="edge11" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M78.46875,815L78.46875,821.3333333333334C78.46875,827.6666666666666,78.46875,840.3333333333334,78.46875,853C78.46875,865.6666666666666,78.46875,878.3333333333334,78.46875,884.6666666666666L78.46875,891" id="edge12" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M78.46875,932L78.46875,938.3333333333334C78.46875,944.6666666666666,78.46875,957.3333333333334,78.46875,970C78.46875,982.6666666666666,78.46875,995.3333333333334,78.46875,1001.6666666666666L78.46875,1008" id="edge13" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M62.57632211538461,1049L57.66646634615385,1055.3333333333333C52.75661057692307,1061.6666666666667,42.93689903846154,1074.3333333333333,38.02704326923077,1087C33.1171875,1099.6666666666667,33.1171875,1112.3333333333333,33.1171875,1118.6666666666667L33.1171875,1125" id="edge14" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M33.1171875,1166L33.1171875,1172.3333333333333C33.1171875,1178.6666666666667,33.1171875,1191.3333333333333,33.1171875,1204C33.1171875,1216.6666666666667,33.1171875,1229.3333333333333,33.1171875,1235.6666666666667L33.1171875,1242" id="edge15" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M33.1171875,1283L33.1171875,1289.3333333333333C33.1171875,1295.6666666666667,33.1171875,1308.3333333333333,39.84761965492638,1321.3449249289192C46.57805180985276,1334.3565165245052,60.038916119705526,1347.7130330490102,66.76934827463191,1354.3912913112626L73.49978042955829,1361.0695495735151" id="edge16" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M94.36117788461539,1049L99.27103365384615,1055.3333333333333C104.18088942307692,1061.6666666666667,114.00060096153845,1074.3333333333333,118.91045673076923,1087C123.8203125,1099.6666666666667,123.8203125,1112.3333333333333,123.8203125,1118.6666666666667L123.8203125,1125" id="edge17" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M123.8203125,1166L123.8203125,1172.3333333333333C123.8203125,1178.6666666666667,123.8203125,1191.3333333333333,123.8203125,1204C123.8203125,1216.6666666666667,123.8203125,1229.3333333333333,123.8203125,1235.6666666666667L123.8203125,1242" id="edge18" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path><path d="M123.8203125,1283L123.8203125,1289.3333333333333C123.8203125,1295.6666666666667,123.8203125,1308.3333333333333,117.08988034507361,1321.3449249289192C110.35944819014723,1334.3565165245052,96.89858388029448,1347.7130330490102,90.16815172536809,1354.3912913112626L83.43771957044171,1361.0695495735151" id="edge19" class=" edge-thickness-normal transition" style="fill:none" marker-end="url(#statediagram-barbEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(145.203125, 151)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(11.734375, 385)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(62.890625, 268)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(62.890625, 385)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(62.890625, 502)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(145.203125, 268)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(145.203125, 385)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(145.203125, 502)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(196.359375, 385)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(145.203125, 619)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(78.46875, 736)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(78.46875, 853)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(78.46875, 970)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(33.1171875, 1087)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(33.1171875, 1204)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>0</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(33.1171875, 1321)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(123.8203125, 1087)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(123.8203125, 1204)"><g class="label" transform="translate(-4.1953125, -13)"><rect rx="0" ry="0" width="8.390625" height="26"></rect><foreignObject width="8.390625" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>1</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(123.8203125, 1321)"><g class="label" transform="translate(-3.734375, -13)"><rect rx="0" ry="0" width="7.46875" height="26"></rect><foreignObject width="7.46875" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>ε</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="state-root_start-0" transform="translate(78.46875, 15)"><circle class="state-start" r="7" width="14" height="14"></circle></g><g class="node statediagram-state" id="state-q0-2" transform="translate(78.46875, 92.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q0</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q1-9" transform="translate(145.203125, 209.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q1</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q7-11" transform="translate(78.46875, 677.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q7</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q2-4" transform="translate(62.890625, 326.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q2</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q3-5" transform="translate(62.890625, 443.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q3</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q6-10" transform="translate(145.203125, 560.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q6</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q4-7" transform="translate(145.203125, 326.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q4</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q5-8" transform="translate(145.203125, 443.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q5</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q8-12" transform="translate(78.46875, 794.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q8</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q9-13" transform="translate(78.46875, 911.5)"><rect class="basic label-container" style="" x="-16.15625" y="-20.5" width="32.3125" height="41"></rect><g class="label" style="" transform="translate(-8.65625, -13)"><foreignObject width="17.3125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q9</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q10-17" transform="translate(78.46875, 1028.5)"><rect class="basic label-container" style="" x="-20.3515625" y="-20.5" width="40.703125" height="41"></rect><g class="label" style="" transform="translate(-12.8515625, -13)"><foreignObject width="25.703125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q10</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q11-15" transform="translate(33.1171875, 1145.5)"><rect class="basic label-container" style="" x="-20.3515625" y="-20.5" width="40.703125" height="41"></rect><g class="label" style="" transform="translate(-12.8515625, -13)"><foreignObject width="25.703125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q11</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q12-16" transform="translate(33.1171875, 1262.5)"><rect class="basic label-container" style="" x="-20.3515625" y="-20.5" width="40.703125" height="41"></rect><g class="label" style="" transform="translate(-12.8515625, -13)"><foreignObject width="25.703125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q12</span></div></foreignObject></g></g><g class="node default" id="state-root_end-19" transform="translate(78.46875, 1366)"><circle class="state-start" r="7" width="14" height="14"></circle><circle class="state-end" r="5" width="10" height="10"></circle></g><g class="node statediagram-state" id="state-q13-18" transform="translate(123.8203125, 1145.5)"><rect class="basic label-container" style="" x="-20.3515625" y="-20.5" width="40.703125" height="41"></rect><g class="label" style="" transform="translate(-12.8515625, -13)"><foreignObject width="25.703125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q13</span></div></foreignObject></g></g><g class="node statediagram-state" id="state-q14-19" transform="translate(123.8203125, 1262.5)"><rect class="basic label-container" style="" x="-20.3515625" y="-20.5" width="40.703125" height="41"></rect><g class="label" style="" transform="translate(-12.8515625, -13)"><foreignObject width="25.703125" height="26"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>q14</span></div></foreignObject></g></g></g></g></g></svg></div><p><strong><span>任何一个DFA存在一个正则表达式，任何一个正则表达式存在一个DFA。</span></strong></p><h4 id='由正则表达式构造ε-nfa'><span>由正则表达式构造ε-NFA</span></h4><p><span>任何正则表达式e，都存在与其等价的ε-NFA A，即L(A)=L(e)，并且A满足：</span></p><ol start='' ><li><span>仅有一个接受状态；</span></li><li><span>没有进入开始状态的边；</span></li><li><span>没有离开接受状态的边。</span></li></ol><p><strong><span>正则表达式定义的语言，都可以被又穷自动机识别。</span></strong></p><p><span>归纳法可以证明，略。</span></p></div></div>
+</body>
+</html>
